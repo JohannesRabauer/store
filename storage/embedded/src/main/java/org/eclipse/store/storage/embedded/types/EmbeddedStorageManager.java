@@ -193,7 +193,16 @@ public interface EmbeddedStorageManager extends StorageManager
 			
 			return this.storeAll(rootReference, root)[1];
 		}
-		
+
+		@Override
+		public long storeEager(Object instance)
+		{
+			Storer eagerStorer = this.createEagerStorer();
+			long objectId = eagerStorer.store(instance);
+			eagerStorer.commit();
+			return objectId;
+		}
+
 		@Override
 		public final PersistenceRootsView viewRoots()
 		{

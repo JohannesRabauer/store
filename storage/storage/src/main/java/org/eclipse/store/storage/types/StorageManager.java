@@ -113,6 +113,9 @@ public interface StorageManager extends StorageController, StorageConnection, Da
 	 * @return the root instance's objectId.
 	 */
 	public long storeRoot();
+
+
+	public long storeEager(Object instance);
 	
 	/**
 	 * Returns a read-only view on all technical root instance registered in this {@link StorageManager} instance.<br>

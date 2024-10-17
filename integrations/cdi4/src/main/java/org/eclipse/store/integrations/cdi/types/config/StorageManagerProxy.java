@@ -145,6 +145,12 @@ public class StorageManagerProxy extends UsageMarkable.Default implements Storag
     }
 
     @Override
+    public long storeEager(Object instance)
+    {
+        return this.getStorageManager().storeEager(instance);
+    }
+
+    @Override
     public boolean isAcceptingTasks()
     {
         return this.getStorageManager().isAcceptingTasks();
